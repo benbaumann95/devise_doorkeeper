@@ -1,0 +1,11 @@
+<% if !user_signed_in? %>
+  <div class="">
+    <%= link_to "Log in", new_user_registration_path, class: 'btn btn-primary'%>
+  </div>
+  <% else %>
+  <div class="">
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <%= t(".sign_out", default: "Log out") %>
+    <% end %>
+  </div>
+<% end %>
